@@ -2,35 +2,64 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Nossos Óculos</title>
+    <title>Catálogo Premium - Super Óculos</title>
     <style>
-        body { font-family: Arial; text-align: center; background: #f4f4f4; padding: 50px; }
-        .lista { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; }
-        .produto { margin-bottom: 30px; padding: 10px; }
-        img { border-radius: 10px; margin-bottom: 10px; }
-        .btn-voltar { display: block; margin-top: 20px; color: #6e3cbc; text-decoration: none; font-weight: bold; }
+        /* Cores de Luxo: Preto Mate (#1a1a1a) e Dourado (#d4af37) */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background-color: #1a1a1a; color: #fff; padding: 50px; }
+        
+        .container { background: #262626; padding: 40px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #d4af37; }
+        
+        h1 { color: #d4af37; letter-spacing: 2px; text-transform: uppercase; }
+
+        .produto { margin-bottom: 40px; padding: 20px; transition: transform 0.3s; }
+
+        /* Efeito de Zoom na Imagem */
+        .img-container { overflow: hidden; border-radius: 15px; width: 250px; margin: 0 auto 15px auto; border: 2px solid #333; }
+        img { width: 100%; transition: transform 0.5s ease; display: block; }
+        img:hover { transform: scale(1.2); }
+
+        .preco { font-size: 1.4em; color: #d4af37; font-weight: bold; margin: 10px 0; }
+
+        /* Botão Dourado */
+        .btn-encomenda { 
+            background-color: #d4af37; color: #1a1a1a; padding: 12px 25px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; 
+            display: inline-block; transition: 0.3s; border: 2px solid #d4af37;
+        }
+        .btn-encomenda:hover { background-color: transparent; color: #d4af37; }
+
+        .voltar { color: #888; text-decoration: none; display: block; margin-top: 30px; font-size: 0.9em; }
+        .voltar:hover { color: #d4af37; }
     </style>
 </head>
 <body>
-    <h1>Catálogo de Óculos</h1>
-    
-    <div class="lista">
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" width="250" alt="Logótipo Super Óculos" style="border: none; margin-bottom: 20px;">
+        <p style="color: #888;">Coleção Exclusiva</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+
         <div class="produto">
-            <img src="{{ url_for('static', filename='images/oculos1.png') }}" width="200" alt="Óculos 1">
-            <p><strong>🕶️ Óculos de Sol Aviador</strong></p>
-            <p>Preço: 49,90€</p>
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/oculos1.png') }}" alt="Aviador">
+            </div>
+            <p><strong>🕶️ Aviador Gold Edition</strong></p>
+            <p class="preco">49,90€</p>
+            <a href="/encomenda" class="btn-encomenda">Solicitar Reserva</a>
         </div>
-       <a href="/encomenda" style="background-color: #6e3cbc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">Encomendar Agora</a>
-        <hr>
 
         <div class="produto">
-            <img src="{{ url_for('static', filename='images/oculos2.png') }}" width="200" alt="Óculos 2">
-            <p><strong>👓 Óculos de Leitura Modernos</strong></p>
-            <p>Preço: 29,90€</p>
- <a href="/encomenda" style="background-color: #6e3cbc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Encomendar Este Modelo</a>
-    </div>
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/oculos2.png') }}" alt="Modern">
+            </div>
+            <p><strong>👓 Modern Black Matte</strong></p>
+            <p class="preco">29,90€</p>
+            <a href="/encomenda" class="btn-encomenda">Solicitar Reserva</a>
+        </div>
 
-    <a href="/" class="btn-voltar">← Voltar ao Início</a>
+        <a href="/" class="voltar">← Voltar à página principal</a>
+    </div>
 </body>
 </html>
+
+
 
