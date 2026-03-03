@@ -5,16 +5,32 @@
     <title>Nossos Óculos</title>
     <style>
         body { font-family: Arial; text-align: center; background: #f4f4f4; padding: 50px; }
-        .lista { background: white; padding: 20px; border-radius: 10px; display: inline-block; }
+        .lista { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block; }
+        .produto { margin-bottom: 30px; padding: 10px; }
+        img { border-radius: 10px; margin-bottom: 10px; }
+        .btn-voltar { display: block; margin-top: 20px; color: #6e3cbc; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
     <h1>Catálogo de Óculos</h1>
+    
     <div class="lista">
-        <p>🕶️ Óculos de Sol Aviador - 49,90€</p>
-        <p>👓 Óculos de Leitura Modernos - 29,90€</p>
+        <div class="produto">
+            <img src="{{ url_for('static', filename='images/oculos1.jpg') }}" width="200" alt="Óculos 1">
+            <p><strong>🕶️ Óculos de Sol Aviador</strong></p>
+            <p>Preço: 49,90€</p>
+        </div>
+
+        <hr>
+
+        <div class="produto">
+            <img src="{{ url_for('static', filename='images/oculos2.jpg') }}" width="200" alt="Óculos 2">
+            <p><strong>👓 Óculos de Leitura Modernos</strong></p>
+            <p>Preço: 29,90€</p>
+        </div>
     </div>
-    <br><br>
-    <a href="/">Voltar ao Início</a>
+
+    <a href="/" class="btn-voltar">← Voltar ao Início</a>
 </body>
 </html>
+
