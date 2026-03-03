@@ -7,8 +7,9 @@ app = Flask(__name__)
 def home():
     # Esta linha diz ao Flask para mostrar o ficheiro index.html
     return render_template("index.html") 
-
+@app.route("/produtos")
+def produtos():
+    return render_template("produtos.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-    
