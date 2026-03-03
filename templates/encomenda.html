@@ -2,34 +2,66 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Encomendar Óculos</title>
+    <title>Reserva Exclusiva - Super Óculos</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 50px; }
-        .form-container { background: white; padding: 30px; border-radius: 15px; display: inline-block; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: left; }
-        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
-        button { background-color: #6e3cbc; color: white; font-weight: bold; cursor: pointer; border: none; }
-        button:hover { background-color: #5a32a3; }
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background-color: #1a1a1a; color: #fff; padding: 40px; }
+        
+        .form-container { 
+            background: #262626; padding: 30px; border-radius: 20px; 
+            display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            border: 1px solid #d4af37; text-align: left; max-width: 400px; width: 100%;
+        }
+
+        .logo-premium {
+            width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
+            border: 2px solid #d4af37; display: block; margin: 0 auto 20px auto;
+        }
+
+        h2 { color: #d4af37; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        
+        label { display: block; margin-top: 15px; color: #888; font-size: 0.9em; }
+        
+        input, select { 
+            width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; 
+            border: 1px solid #333; background: #1a1a1a; color: white; box-sizing: border-box;
+        }
+
+        input:focus { border-color: #d4af37; outline: none; }
+
+        button { 
+            width: 100%; background-color: #d4af37; color: #1a1a1a; padding: 15px; 
+            margin-top: 25px; border-radius: 50px; font-weight: bold; cursor: pointer; 
+            border: none; text-transform: uppercase; transition: 0.3s;
+        }
+
+        button:hover { background-color: transparent; color: #d4af37; border: 2px solid #d4af37; }
+
+        .voltar { display: block; text-align: center; margin-top: 20px; color: #555; text-decoration: none; font-size: 0.8em; }
+        .voltar:hover { color: #d4af37; }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h2>Faça a sua Encomenda</h2>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-premium">
+        <h2>Solicitar Reserva</h2>
+        
         <form action="/enviar" method="POST">
             <label>O teu Nome:</label>
-            <input type="text" name="nome" placeholder="Escreve aqui..." required>
+            <input type="text" name="nome" placeholder="Ex: Maria Silva" required>
             
-            <label>Modelo de Óculos:</label>
+            <label>Modelo de Luxo:</label>
             <select name="modelo">
-                <option value="Aviador">🕶️ Óculos de Sol Aviador</option>
-                <option value="Modernos">👓 Óculos de Leitura Modernos</option>
+                <option value="Aviador Gold Edition">🕶️ Aviador Gold Edition</option>
+                <option value="Modern Black Matte">👓 Modern Black Matte</option>
             </select>
             
-            <label>O teu contacto (Telefone/Email):</label>
-            <input type="text" name="contacto" required>
+            <label>Telemóvel ou Email:</label>
+            <input type="text" name="contacto" placeholder="Para confirmarmos a reserva" required>
             
-            <button type="submit">Enviar Encomenda</button>
+            <button type="submit">Confirmar Pedido</button>
         </form>
-        <a href="/produtos" style="color: #6e3cbc; text-decoration: none; font-size: 0.9em;">← Voltar ao Catálogo</a>
+        
+        <a href="/produtos" class="voltar">← Cancelar e voltar ao catálogo</a>
     </div>
 </body>
 </html>
