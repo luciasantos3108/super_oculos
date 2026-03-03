@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Encomendar Óculos</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 50px; }
+        .form-container { background: white; padding: 30px; border-radius: 15px; display: inline-block; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: left; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #6e3cbc; color: white; font-weight: bold; cursor: pointer; border: none; }
+        button:hover { background-color: #5a32a3; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Faça a sua Encomenda</h2>
+        <form action="/enviar" method="POST">
+            <label>O teu Nome:</label>
+            <input type="text" name="nome" placeholder="Escreve aqui..." required>
+            
+            <label>Modelo de Óculos:</label>
+            <select name="modelo">
+                <option value="Aviador">🕶️ Óculos de Sol Aviador</option>
+                <option value="Modernos">👓 Óculos de Leitura Modernos</option>
+            </select>
+            
+            <label>O teu contacto (Telefone/Email):</label>
+            <input type="text" name="contacto" required>
+            
+            <button type="submit">Enviar Encomenda</button>
+        </form>
+        <a href="/produtos" style="color: #6e3cbc; text-decoration: none; font-size: 0.9em;">← Voltar ao Catálogo</a>
+    </div>
+</body>
+</html>
