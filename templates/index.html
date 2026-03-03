@@ -2,21 +2,41 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Super Óculos - A Tua Loja Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Óculos - Luxury Eyewear</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 50px; }
-        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        .btn { background: #6e3cbc; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+        /* Cores de Luxo: Preto Mate (#1a1a1a) e Dourado (#d4af37) */
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background-color: #1a1a1a; color: #fff; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        
+        .hero { background: #262626; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #d4af37; max-width: 500px; }
+        
+        .logo { width: 150px; margin-bottom: 20px; }
+        
+        h1 { color: #d4af37; letter-spacing: 3px; text-transform: uppercase; font-size: 1.8em; margin-bottom: 10px; }
+        
+        p { color: #888; font-size: 1.1em; margin-bottom: 30px; }
+
+        /* Botão Dourado Premium */
+        .btn-entrar { 
+            background-color: #d4af37; color: #1a1a1a; padding: 15px 35px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; 
+            display: inline-block; transition: 0.3s; border: 2px solid #d4af37;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .btn-entrar:hover { background-color: transparent; color: #d4af37; transform: translateY(-3px); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>👓 Bem-vindo à Super Óculos</h1>
-        <p>Encontra os melhores modelos para o teu estilo.</p>
-        <br>
-        <a href="/produtos" class="btn">Ver Catálogo</a>
+    <div class="hero">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Super Óculos Logo" class="logo">
+        
+        <h1>Super Óculos</h1>
+        <p>A exclusividade que os seus olhos merecem.</p>
+        
+        <a href="/produtos" class="btn-entrar">Explorar Coleção</a>
     </div>
 </body>
 </html>
+
 
