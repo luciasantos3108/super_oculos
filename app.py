@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template # Importa a ferramenta para ler HTML
 import os
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Deploy a funcionar 🚀"
+    # Esta linha diz ao Flask para mostrar o ficheiro index.html
+    return render_template("index.html") 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
