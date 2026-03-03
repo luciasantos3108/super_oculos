@@ -9,14 +9,25 @@
         
         .container { background: #262626; padding: 40px; border-radius: 20px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #d4af37; }
         
+        /* Estilo para o Logótipo Pequeno e Redondo */
+        .logo-premium {
+            width: 100px; /* Tamanho pequeno e elegante */
+            height: 100px;
+            border-radius: 50%; /* Faz a imagem ficar redonda */
+            object-fit: cover; /* Garante que a imagem não distorce */
+            border: 2px solid #d4af37; /* Moldura dourada */
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
         h1 { color: #d4af37; letter-spacing: 2px; text-transform: uppercase; }
 
         .produto { margin-bottom: 40px; padding: 20px; transition: transform 0.3s; }
 
-        /* Efeito de Zoom na Imagem */
+        /* Efeito de Zoom na Imagem dos Óculos */
         .img-container { overflow: hidden; border-radius: 15px; width: 250px; margin: 0 auto 15px auto; border: 2px solid #333; }
-        img { width: 100%; transition: transform 0.5s ease; display: block; }
-        img:hover { transform: scale(1.2); }
+        .img-produto { width: 100%; transition: transform 0.5s ease; display: block; }
+        .img-produto:hover { transform: scale(1.2); }
 
         .preco { font-size: 1.4em; color: #d4af37; font-weight: bold; margin: 10px 0; }
 
@@ -34,13 +45,14 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" width="120" alt="Logótipo Super Óculos" style="border: none; margin-bottom: 20px;">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logótipo Super Óculos" class="logo-premium">
+        
         <p style="color: #888;">Coleção Exclusiva</p>
         <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
 
         <div class="produto">
             <div class="img-container">
-                <img src="{{ url_for('static', filename='images/oculos1.png') }}" alt="Aviador">
+                <img src="{{ url_for('static', filename='images/oculos1.png') }}" alt="Aviador" class="img-produto">
             </div>
             <p><strong>🕶️ Aviador Gold Edition</strong></p>
             <p class="preco">49,90€</p>
@@ -49,7 +61,7 @@
 
         <div class="produto">
             <div class="img-container">
-                <img src="{{ url_for('static', filename='images/oculos2.png') }}" alt="Modern">
+                <img src="{{ url_for('static', filename='images/oculos2.png') }}" alt="Modern" class="img-produto">
             </div>
             <p><strong>👓 Modern Black Matte</strong></p>
             <p class="preco">29,90€</p>
